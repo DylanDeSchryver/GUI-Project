@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
-from sql_program import save_sql #I am not using import * because i keep getting an error when doing so.
-from sql_program import get_sql
-from sql_program import first
+
+
+from sql_program import *
 
 # Create global variables to store user information
 user_info = {'name': '', 'last_name': '', 'username': '', 'password': ''}
@@ -150,7 +150,7 @@ def loggedin(username, password,
                                relief=tk.SUNKEN,
                                borderwidth=2,
                                width=400,
-                               height=300)  #just makes empty frame look nice
+                               height=300,bg = 'pink')  #just makes empty frame look nice
   bottom_right_frame = tk.Frame(root, width=400, height=300)
 
   top_left_frame.grid(row=0, column=0, sticky="nsew")
