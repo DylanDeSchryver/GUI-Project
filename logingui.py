@@ -16,8 +16,6 @@ def window():
   root.title("Window")
   label2 = Label(root, text="Login or create an account.")
   label2.pack()
-  label3 = Label(root, text="")
-  label3.pack()
   add_button = Button(root, text='Create an Account', command=create)
   add_button.pack()
   login_button = Button(root, text='Login', command=login)
@@ -32,8 +30,6 @@ def create():
   root = Tk()
   root.geometry("600x400")
   root.title("Create an Account")
-  label3 = Label(root, text="")
-  label3.pack()
 
   name = Label(root, text="Name: ")
   name.pack()
@@ -75,8 +71,6 @@ def login():  #make login window with entry fields and buttons
   root = Tk()
   root.geometry("600x400")
   root.title("Log In")
-  label3 = Label(root, text="")
-  label3.pack()
 
   user = Label(root, text="User: ")
   user.pack()
@@ -92,6 +86,11 @@ def login():  #make login window with entry fields and buttons
     username = user_entry.get()
     password = passw_entry.get()
     key = get_sql(username, password)
+    if key != []:
+      pass
+    else:
+      messagebox.showerror('Error', "Incorrect Username or Password.")
+      root.destroy()
     
     name = first(username,password)
     
